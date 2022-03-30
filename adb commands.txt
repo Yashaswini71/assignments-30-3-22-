@@ -1,0 +1,517 @@
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\User\Downloads\platform-tools>adb devices
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+List of devices attached
+
+
+C:\Users\User\Downloads\platform-tools>adb devices
+List of devices attached
+38433b73        device
+
+
+C:\Users\User\Downloads\platform-tools>adb shell ls
+acct
+apex
+bin
+bugreports
+cache
+config
+d
+data
+data_mirror
+debug_ramdisk
+default.prop
+dev
+etc
+init
+init.environ.rc
+init.vivo.common.rc
+init.vivo.rc
+init.vivo.soc.rc
+linkerconfig
+lost+found
+metadata
+mnt
+odm
+oem
+proc
+product
+res
+sdcard
+storage
+sys
+system
+system_ext
+vendor
+vgc
+
+C:\Users\User\Downloads\platform-tools>cd storage
+The system cannot find the path specified.
+
+C:\Users\User\Downloads\platform-tools>adb storage
+adb.exe: unknown command storage
+
+C:\Users\User\Downloads\platform-tools>adb shell
+2025:/ $ adb shell
+/system/bin/sh: adb: inaccessible or not found
+127|2025:/ $ ls
+acct  bugreports  d            debug_ramdisk  etc              init.vivo.common.rc  linkerconfig  mnt  proc     sdcard   system      vgc
+apex  cache       data         default.prop   init             init.vivo.rc         lost+found    odm  product  storage  system_ext
+bin   config      data_mirror  dev            init.environ.rc  init.vivo.soc.rc     metadata      oem  res      sys      vendor
+2025:/ $ su
+/system/bin/sh: su: inaccessible or not found
+127|2025:/ $ ls
+acct  bugreports  d            debug_ramdisk  etc              init.vivo.common.rc  linkerconfig  mnt  proc     sdcard   system      vgc
+apex  cache       data         default.prop   init             init.vivo.rc         lost+found    odm  product  storage  system_ext
+bin   config      data_mirror  dev            init.environ.rc  init.vivo.soc.rc     metadata      oem  res      sys      vendor
+2025:/ $ adb push
+C:\Users\User\Downloads\platform-tools>adb shell
+2025:/ $ ls
+acct  bugreports  d            debug_ramdisk  etc              init.vivo.common.rc  linkerconfig  mnt  proc     sdcard   system      vgc
+apex  cache       data         default.prop   init             init.vivo.rc         lost+found    odm  product  storage  system_ext
+bin   config      data_mirror  dev            init.environ.rc  init.vivo.soc.rc     metadata      oem  res      sys      vendor
+2025:/ $ cd storage
+2025:/storage $ ls
+3862-6134  caf-999  emulated  self
+2025:/storage $ cd self
+2025:/storage/self $ ls
+primary
+2025:/storage/self $ cd primary
+2025:/storage/self/primary $ ls
+1CollageMaker                HRMS_DB                  IMG-20190930-WA0095.jpg  IMG_20190929_181212.jpg  ReducePhotoSize          cache
+2017-12-09-21-56-15-813.jpg  IMG-20190930-WA0026.jpg  IMG-20190930-WA0096.jpg  IMG_20190929_181224.jpg  Ringtones                frame_collage_editor
+2017-12-09-21-56-22-700.jpg  IMG-20190930-WA0029.jpg  IMG-20190930-WA0097.jpg  KSP                      Snapchat                 free_call_uuid_info.txt
+2017-12-09-21-57-09-037.jpg  IMG-20190930-WA0030.jpg  IMG-20190930-WA0098.jpg  KineMaster               Telegram                 inShare
+2017-12-09-21-57-13-815.jpg  IMG-20190930-WA0037.jpg  IMG-20190930-WA0104.jpg  LazyList                 TikBitz                  log
+2017-12-09-21-58-10-123.jpg  IMG-20190930-WA0039.jpg  IMG-20191002-WA0003.jpg  MIUI                     VID_20190929_142318.mp4  logger
+2017-12-09-21-58-21-598.jpg  IMG-20190930-WA0043.jpg  IMG-20191003-WA0001.jpg  Movies                   VID_20190929_143121.mp4  mAst
+2017-12-09-21-58-27-249.jpg  IMG-20190930-WA0044.jpg  IMG-20191003-WA0002.jpg  Music                    VID_20190929_143124.mp4  myntra_product.jpg
+Alarms                       IMG-20190930-WA0046.jpg  IMG-20191003-WA0003.jpg  Notifications            VID_20190929_143206.mp4  vipc
+Android                      IMG-20190930-WA0053.jpg  IMG-20191003-WA0004.jpg  PhotoEditor              VID_20190929_180655.mp4  vivoDemoVideo
+Audiobooks                   IMG-20190930-WA0055.jpg  IMG-20191003-WA0005.jpg  PhotoTransfer            VidMate                  vivoDownloadEx
+Cardboard                    IMG-20190930-WA0089.jpg  IMG-20191003-WA0006.jpg  PicsArt                  Video                    yashu\ photos
+DCIM                         IMG-20190930-WA0090.jpg  IMG-20191003-WA0007.jpg  Pictures                 VideoEditorPro
+Documents                    IMG-20190930-WA0091.jpg  IMG-20191003-WA0008.jpg  Podcasts                 VlogStar
+Download                     IMG-20190930-WA0092.jpg  IMG-20191003-WA0009.jpg  PowerDirector            androidtv
+Fordeal                      IMG-20190930-WA0093.jpg  IMG-20191003-WA0010.jpg  ProgramData              apps
+GZYperfectme                 IMG-20190930-WA0094.jpg  IMG-20191003-WA0011.jpg  Record                   binary64.bin
+2025:/storage/self/primary $ cd Documents
+2025:/storage/self/primary/Documents $ ls
+Lark  attendance\ 8_22.xlsx
+2025:/storage/self/primary/Documents $ exit
+
+C:\Users\User\Downloads\platform-tools>adb push C:\Users\User\Documents\mutex.c /storage/self/primary/Documents
+adb: error: cannot stat 'C:\Users\User\Documents\mutex.c': No such file or directory
+
+C:\Users\User\Downloads\platform-tools>adb push E:\Photos\old photos 986fb8a082b44905deeefe0be943713c.jpg /storage/self/primary/Documents
+adb: error: cannot stat 'E:\Photos\old': No such file or directory
+adb: error: cannot stat 'photos': No such file or directory
+adb: error: cannot stat '986fb8a082b44905deeefe0be943713c.jpg': No such file or directory
+
+C:\Users\User\Downloads\platform-tools>adb push "E:\Photos\old photos 986fb8a082b44905deeefe0be943713c.jpg" /storage/self/primary/Documents
+adb: error: cannot stat 'E:\Photos\old photos 986fb8a082b44905deeefe0be943713c.jpg': No such file or directory
+
+C:\Users\User\Downloads\platform-tools>adb shell
+2025:/ $ ls
+acct  bugreports  d            debug_ramdisk  etc              init.vivo.common.rc  linkerconfig  mnt  proc     sdcard   system      vgc
+apex  cache       data         default.prop   init             init.vivo.rc         lost+found    odm  product  storage  system_ext
+bin   config      data_mirror  dev            init.environ.rc  init.vivo.soc.rc     metadata      oem  res      sys      vendor
+2025:/ $ cd storage
+2025:/storage $ ls
+3862-6134  caf-999  emulated  self
+2025:/storage $ cd self
+2025:/storage/self $ ls
+primary
+2025:/storage/self $ cd primary
+2025:/storage/self/primary $ ls
+1CollageMaker                HRMS_DB                  IMG-20190930-WA0095.jpg  IMG_20190929_181212.jpg  ReducePhotoSize          cache
+2017-12-09-21-56-15-813.jpg  IMG-20190930-WA0026.jpg  IMG-20190930-WA0096.jpg  IMG_20190929_181224.jpg  Ringtones                frame_collage_editor
+2017-12-09-21-56-22-700.jpg  IMG-20190930-WA0029.jpg  IMG-20190930-WA0097.jpg  KSP                      Snapchat                 free_call_uuid_info.txt
+2017-12-09-21-57-09-037.jpg  IMG-20190930-WA0030.jpg  IMG-20190930-WA0098.jpg  KineMaster               Telegram                 inShare
+2017-12-09-21-57-13-815.jpg  IMG-20190930-WA0037.jpg  IMG-20190930-WA0104.jpg  LazyList                 TikBitz                  log
+2017-12-09-21-58-10-123.jpg  IMG-20190930-WA0039.jpg  IMG-20191002-WA0003.jpg  MIUI                     VID_20190929_142318.mp4  logger
+2017-12-09-21-58-21-598.jpg  IMG-20190930-WA0043.jpg  IMG-20191003-WA0001.jpg  Movies                   VID_20190929_143121.mp4  mAst
+2017-12-09-21-58-27-249.jpg  IMG-20190930-WA0044.jpg  IMG-20191003-WA0002.jpg  Music                    VID_20190929_143124.mp4  myntra_product.jpg
+Alarms                       IMG-20190930-WA0046.jpg  IMG-20191003-WA0003.jpg  Notifications            VID_20190929_143206.mp4  vipc
+Android                      IMG-20190930-WA0053.jpg  IMG-20191003-WA0004.jpg  PhotoEditor              VID_20190929_180655.mp4  vivoDemoVideo
+Audiobooks                   IMG-20190930-WA0055.jpg  IMG-20191003-WA0005.jpg  PhotoTransfer            VidMate                  vivoDownloadEx
+Cardboard                    IMG-20190930-WA0089.jpg  IMG-20191003-WA0006.jpg  PicsArt                  Video                    yashu\ photos
+DCIM                         IMG-20190930-WA0090.jpg  IMG-20191003-WA0007.jpg  Pictures                 VideoEditorPro
+Documents                    IMG-20190930-WA0091.jpg  IMG-20191003-WA0008.jpg  Podcasts                 VlogStar
+Download                     IMG-20190930-WA0092.jpg  IMG-20191003-WA0009.jpg  PowerDirector            androidtv
+Fordeal                      IMG-20190930-WA0093.jpg  IMG-20191003-WA0010.jpg  ProgramData              apps
+GZYperfectme                 IMG-20190930-WA0094.jpg  IMG-20191003-WA0011.jpg  Record                   binary64.bin
+2025:/storage/self/primary $ exit
+
+C:\Users\User\Downloads\platform-tools>adb pull /storage/self/primary/free_call_uuid_info.txt C:\Users\User
+/storage/self/primary/free_call_uuid_info.txt: 1 file pulled, 0 skipped. 0.0 MB/s (36 bytes in 0.013s)
+
+C:\Users\User\Downloads\platform-tools>adb push "C:\Users\User\Downloads\asg4.c" /storage/self/primary
+C:\Users\User\Downloads\asg4.c: 1 file pushed, 0 skipped. 0.0 MB/s (1971 bytes in 0.087s)
+
+C:\Users\User\Downloads\platform-tools>adb logcat > logs.txt
+^C
+C:\Users\User\Downloads\platform-tools>adb shell settings put system screen_brightness 0
+
+C:\Users\User\Downloads\platform-tools>adb shell settings put system screen_brightness 100
+
+C:\Users\User\Downloads\platform-tools>adb shell pm list packages
+package:com.google.android.networkstack.tethering
+package:com.vivo.soundrecorder
+package:com.android.cts.priv.ctsshim
+package:com.vivo.weather.provider
+package:com.google.android.youtube
+package:com.qualcomm.qti.qcolor
+package:com.water.won.ops
+package:com.android.internal.display.cutout.emulation.corner
+package:com.google.android.ext.services
+package:com.android.internal.display.cutout.emulation.double
+package:com.android.providers.telephony
+package:com.vivo.smartmultiwindow
+package:com.android.dynsystem
+package:com.truecaller
+package:com.android.theme.icon.pebble
+package:com.google.android.googlequicksearchbox
+package:com.google.android.cellbroadcastservice
+package:com.allltranslator.efficienttool
+package:com.android.providers.calendar
+package:com.google.android.apps.googleassistant
+package:com.whereismytrain.android
+package:org.telegram.messenger
+package:com.android.providers.media
+package:com.phonepe.app
+package:com.qti.service.colorservice
+package:com.vivo.setupwizard
+package:com.google.android.onetimeinitializer
+package:com.google.android.ext.shared
+package:com.android.internal.systemui.navbar.gestural_wide_back
+package:com.vivo.easyshare
+package:com.qualcomm.qti.simcontacts
+package:com.qualcomm.qti.modemtestmode
+package:com.vivo.abe
+package:com.vivo.epm
+package:com.vivo.pem
+package:com.vivo.sps
+package:com.android.wallpapercropper
+package:com.android.theme.icon.vessel
+package:com.android.theme.color.cinnamon
+package:com.vivo.appfilter
+package:com.vivo.nightpearl
+package:com.vivo.hiboard
+package:com.android.theme.icon_pack.rounded.systemui
+package:com.vivo.floatingball
+package:com.snowcorp.stickerly.android
+package:com.vivo.compass
+package:com.android.theme.icon.taperedrect
+package:com.goodix.deltadiff
+package:com.android.cellbroadcast.overlay
+package:com.android.externalstorage
+package:com.vivo.crontab
+package:com.qualcomm.uimremoteclient
+package:com.android.htmlviewer
+package:com.vivo.fingerprintengineer
+package:com.whatsapp
+package:com.vivo.numbermark
+package:com.qualcomm.qti.uceShimService
+package:com.android.companiondevicemanager
+package:android.overlay.vrro
+package:com.android.mms.service
+package:com.funtouch.uiengine
+package:com.google.android.apps.docs.editors.sheets
+package:com.android.providers.downloads
+package:com.android.theme.icon_pack.rounded.android
+package:com.vivo.weather
+package:com.vivo.website
+package:vendor.qti.hardware.cacert.server
+package:com.android.bbkmusic
+package:com.cyberlink.powerdirector.DRA140225_01
+package:com.qualcomm.qti.telephonyservice
+package:com.android.browser
+package:com.bbk.updater
+package:com.android.theme.icon_pack.circular.themepicker
+package:com.vivo.gamecube
+package:vendor.qti.iwlan
+package:com.google.android.configupdater
+package:com.microsoft.office.excel
+package:com.google.android.providers.media.module
+package:com.google.android.overlay.modules.permissioncontroller
+package:com.vivo.ewarranty
+package:com.vivo.pushservice
+package:com.qualcomm.uimremoteserver
+package:com.volte.config
+package:com.qti.confuridialer
+package:android.qvaoverlay.common
+package:com.android.systemui.plugin.globalactions.wallet
+package:com.google.ar.core
+package:com.google.ar.lens
+package:com.android.vending
+package:com.android.pacprocessor
+package:com.android.simappdialog
+package:android.overlay.common
+package:com.android.internal.display.cutout.emulation.hole
+package:com.android.internal.display.cutout.emulation.tall
+package:com.android.certinstaller
+package:com.android.theme.color.black
+package:com.android.carrierconfig
+package:com.vivo.smartshot
+package:com.google.android.marvin.talkback
+package:com.android.theme.color.green
+package:com.android.theme.color.ocean
+package:com.android.theme.color.space
+package:com.wapi.wapicertmanage
+package:com.android.internal.systemui.navbar.threebutton
+package:us.zoom.videomeetings
+package:com.vivo.livewallpaper.floatingcloud
+package:com.qti.qualcomm.datastatusnotification
+package:android
+package:com.android.contacts
+package:com.qualcomm.wfd.service
+package:com.vivo.upnpserver
+package:com.android.theme.icon_pack.rounded.launcher
+package:com.qti.qualcomm.deviceinfo
+package:com.bbk.cloud
+package:com.bbk.theme
+package:com.vivo.scanner
+package:com.android.egg
+package:com.android.mms
+package:com.android.mtp
+package:com.android.nfc
+package:com.android.ons
+package:com.android.stk
+package:com.android.launcher3
+package:com.android.backupconfirm
+package:com.radio.pocketfm
+package:com.instagram.android
+package:org.codeaurora.ims
+package:com.android.statementservice
+package:com.google.android.gm
+package:android.overlay.target
+package:com.google.android.apps.tachyon
+package:com.vlife.vivo.wallpaper
+package:com.google.android.overlay.gmsconfig.common
+package:com.vivo.daemonService
+package:com.qti.pasrservice
+package:com.android.settings.intelligence
+package:com.ringclip
+package:com.android.internal.systemui.navbar.gestural_extra_wide_back
+package:com.vivo.livewallpaper.vos
+package:com.google.android.permissioncontroller
+package:com.qualcomm.qti.dynamicddsservice
+package:com.google.android.setupwizard
+package:com.iqoo.engineermode
+package:com.qualcomm.qcrilmsgtunnel
+package:com.android.providers.settings
+package:com.android.sharedstoragebackup
+package:com.facebook.services
+package:com.vivo.imanager
+package:com.android.printspooler
+package:com.vivo.globalanimation
+package:com.android.theme.icon_pack.filled.settings
+package:com.android.wifi.resources.overlay.common
+package:com.vivo.Tips
+package:com.vivo.game
+package:com.google.android.overlay.modules.ext.services
+package:com.android.incallui
+package:com.android.se
+package:com.ryzenrise.vlogstar
+package:com.android.inputdevices
+package:com.google.android.apps.wellbeing
+package:com.google.android.overlay.gmsconfig.photos
+package:android.autoinstalls.config.vivo.devices
+package:com.android.bips
+package:com.qti.dpmserviceapp
+package:com.google.android.apps.nbu.files
+package:com.google.android.captiveportallogin
+package:com.android.theme.icon_pack.circular.settings
+package:com.google.android.apps.classroom
+package:com.adobe.scan.android
+package:com.bbk.iqoo.logsystem
+package:com.vivo.SmartKey
+package:com.vivo.engineercamera
+package:com.google.android.apps.docs
+package:com.google.android.apps.maps
+package:com.mobihome.livemobilelocationtracker
+package:com.google.android.modulemetadata
+package:com.microsoft.office.word
+package:net.one97.paytm
+package:com.lenskart.app
+package:com.google.android.webview
+package:com.android.theme.icon.teardrop
+package:com.google.android.overlay.modules.documentsui
+package:com.vivo.faceui
+package:com.vivo.videoeditor
+package:com.google.android.networkstack
+package:com.android.server.telecom
+package:com.google.android.syncadapters.contacts
+package:com.android.bbklog
+package:com.android.theme.icon_pack.rounded.themepicker
+package:com.android.keychain
+package:com.qti.snapdragon.qdcm_ff
+package:com.android.wifi.resources.overlay.target
+package:com.android.camera
+package:com.android.chrome
+package:com.vivo.unionpay
+package:com.hideitpro
+package:com.android.dialer
+package:com.android.theme.icon_pack.filled.systemui
+package:com.google.android.packageinstaller
+package:com.google.android.gms
+package:com.google.android.gsf
+package:com.google.android.tts
+package:com.android.wifi.resources
+package:com.android.phone.overlay.common
+package:com.android.carrierconfig.overlay.common
+package:com.android.calllogbackup
+package:com.vivo.tws.vivotws
+package:com.google.android.partnersetup
+package:com.android.systemui.overlay.common
+package:com.vivo.feedback
+package:com.android.server.telecom.overlay.common
+package:com.android.localtransport
+package:com.google.android.overlay.gmsconfig.gsa
+package:com.android.carrierdefaultapp
+package:com.qualcomm.qti.remoteSimlockAuth
+package:com.vivo.networkstate
+package:com.enthralltech.karnatak
+package:com.qualcomm.qti.devicestatisticsservice
+package:com.android.theme.font.notoserifsource
+package:com.android.theme.icon_pack.filled.android
+package:com.android.proxyhandler
+package:com.vivo.magazine
+package:com.android.internal.display.cutout.emulation.waterfall
+package:com.qualcomm.qti.workloadclassifier
+package:com.netflix.mediaclient
+package:com.iqoo.trafficupgrade
+package:com.android.VideoPlayer
+package:com.android.theme.icon_pack.circular.systemui
+package:cris.org.in.prs.ima
+package:com.google.android.connectivity.resources
+package:com.google.android.overlay.modules.permissioncontroller.forframework
+package:com.jio.myjio
+package:com.google.android.feedback
+package:com.google.android.printservice.recommendation
+package:com.google.android.apps.photos
+package:com.google.android.calendar
+package:com.vivo.doubletimezoneclock
+package:com.android.managedprovisioning
+package:com.vivo.vibrator4d
+package:com.spotify.music
+package:com.android.soundpicker
+package:com.android.theme.icon.vivotheme
+package:com.google.android.documentsui
+package:com.microsoft.office.officehubrow
+package:com.vivo.globalsearch
+package:com.google.mainline.telemetry
+package:com.larksuite.suite
+package:com.capulustech.ksppqrs
+package:com.android.providers.partnerbookmarks
+package:com.android.smspush
+package:com.eterno
+package:com.area120.grasshopper
+package:com.goodix
+package:com.android.apps.tag
+package:com.facebook.system
+package:com.android.bbk.lockscreen3
+package:com.vivo.audiofx
+package:com.android.theme.icon.squircle
+package:com.zivame.consumer
+package:com.adobe.reader
+package:com.google.android.networkstack.permissionconfig
+package:com.bbk.theme.resources
+package:com.yandex.preinstallsatellite
+package:com.android.bookmarkprovider
+package:com.linkedin.android
+package:com.android.settings
+package:com.qualcomm.qti.cne
+package:com.qualcomm.qti.lpa
+package:com.qualcomm.qti.smq
+package:com.qualcomm.qti.uim
+package:com.licapps.ananda
+package:com.vivo.video.floating
+package:com.cisco.webex.meetings
+package:com.android.theme.icon_pack.filled.launcher
+package:com.vivo.multinlp
+package:com.vivo.carrierlocation
+package:com.google.android.projection.gearhead
+package:com.qualcomm.location
+package:com.ludo.king
+package:breastenlarger.bodyeditor.photoeditor
+package:com.android.cts.ctsshim
+package:easy.sudoku.puzzle.solver.free
+package:com.vivo.demovideo
+package:com.google.android.overlay.modules.modulemetadata.forframework
+package:com.vivo.phoneinstructions
+package:com.android.theme.icon_pack.circular.launcher
+package:com.qualcomm.qti.uimGbaApp
+package:com.qti.diagservices
+package:com.nemo.vidmate
+package:com.android.vpndialogs
+package:com.vivo.gallery
+package:com.google.android.apps.meetings
+package:com.vivo.notes
+package:com.vivo.omacp
+package:com.vivo.gamewatch
+package:com.vivo.share
+package:com.android.phone
+package:com.android.shell
+package:com.android.theme.icon_pack.filled.themepicker
+package:com.tv.v18.viola
+package:com.android.wallpaperbackup
+package:com.android.providers.blockednumber
+package:com.android.email.partnerprovider
+package:com.king.candycrushsaga
+package:com.android.providers.userdictionary
+package:com.google.android.apps.setupwizard.searchselector
+package:com.vivo.minscreen
+package:com.block.jigsaw.puzzle.gallery
+package:com.qualcomm.qti.seccamservice
+package:com.android.hotspot2.osulogin
+package:com.google.android.gms.location.history
+package:com.android.internal.systemui.navbar.gestural
+package:com.vivo.FMRadio
+package:com.android.location.fused
+package:com.android.theme.color.orchid
+package:com.android.deskclock
+package:com.android.systemui
+package:com.google.android.apps.youtube.music
+package:android.overlay.vivoresrro
+package:com.android.theme.color.purple
+package:com.android.bluetoothmidiservice
+package:com.qualcomm.qti.poweroffalarm
+package:com.vivo.doubleinstance
+package:com.qti.ltebc
+package:com.vivo.appstore
+package:com.vivo.fingerprintui
+package:com.facebook.appmanager
+package:com.vivo.livewallpaper.plant
+package:com.vivo.browser
+package:com.google.android.cellbroadcastreceiver
+package:com.vivo.bsptest
+package:com.yozo.vivo.office
+package:com.qualcomm.qti.server.wigig.tethering.rro
+package:com.vivo.assistant
+package:com.android.bluetooth
+package:com.qualcomm.timeservice
+package:com.latest.cricappvishu
+package:com.qualcomm.atfwd
+package:com.qualcomm.embms
+package:com.android.providers.contacts
+package:com.android.theme.icon.roundedrect
+package:com.vivo.calculator
+package:com.android.internal.systemui.navbar.gestural_narrow_back
+package:com.android.cellbroadcastreceiver.overlay.common
+package:com.android.theme.icon_pack.rounded.settings
+package:com.microsoft.teams
+package:com.snapchat.android
+package:com.meesho.supply
+package:com.google.android.inputmethod.latin
+package:com.gsma.rcs
+package:com.bbk.account
+package:com.android.theme.icon_pack.circular.android
+package:com.google.android.apps.restore
+
+C:\Users\User\Downloads\platform-tools>adb logcat -c -v threadtime >logs.txt
+
+C:\Users\User\Downloads\platform-tools>
